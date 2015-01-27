@@ -1,0 +1,11 @@
+The LabVIEW demos access the PHLIB DLL routines via the ‘Call Library Function’ of LabVIEW. 
+For details refer to the LabVIEW application note 088 ‘How to Call Win32 Dynamic Link Libraries 
+(DLLs) from LabVIEW’ provided National Instruments. Consult phlib.h or the corresponding manual 
+section for the parameter types etc. Make sure to specify the correct calling convention (stdcall).
+
+Strictly observe that the library is not re-entrant. This means the PH_xxxx library calls must be 
+made sequentially in exactly the right order. They cannot be called in parallel as is the default 
+in LabVIEW if you place them side by side in a diagram. Sequential execution must be enforced by 
+sequence structures or data dependency. In the demos this is e.g. done by chained and/or nested 
+case structures. This applies to all VI hierarchy levels, so sub-VIs containing library calls must 
+also be executed in correct sequence.
