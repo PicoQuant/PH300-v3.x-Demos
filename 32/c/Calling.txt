@@ -1,0 +1,29 @@
+PHLib Programming Library - Demos for C/C++
+
+
+PhLib.dll uses the _stdcall calling convention.
+The demo code provided here is in plain C to provide the smallest 
+common denominator for C and C++. Consult phlib.h, phdefin.h and 
+the manual for reference on the library calls. The library functions 
+must be declared as ‘extern C’ when used from C++.
+In order to make the exports of PHlib.dll known to the rest of your 
+application you may use phlib.exp or link directly with the import 
+library phlib.lib. Phlib.lib provided here was created for MSVC 6.0,
+with symbols decorated in Microsoft style. 
+MSVC++ users can use the supplied project files (*.dsw) 
+where linking with phlib.lib is already set up. 
+The DLL also (additionally) exports all symbols undecorated, so that 
+other compilers should be able to use them conveniently, provided 
+they understand the Microsoft LIB format. This is the case e.g for 
+MinGW 2.0. Other compilers can create their own import library from
+the DLL alone or from the .exp file. With Borland C++ 5.x and  
+C++Builder 3.0 you can use the Borland Utility IMPLIB to create 
+your own import library very easily from the DLL alone. A ready-to-use 
+‘phlib_bc.lib’ can be found in the PHLib top folder. Failing 
+to work with an import library you may still be able load the DLL 
+dynamically and call the functions explicitly. 
+The DLL is not re-entrant. All functions must be called strictly in
+order and without concurrency from different threads.
+
+
+

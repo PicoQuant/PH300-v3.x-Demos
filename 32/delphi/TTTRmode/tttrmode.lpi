@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="9"/>
+    <PathDelim Value="\"/>
+    <General>
+      <Flags>
+        <MainUnitHasCreateFormStatements Value="False"/>
+        <MainUnitHasTitleStatement Value="False"/>
+        <LRSInOutputDirectory Value="False"/>
+      </Flags>
+      <MainUnit Value="0"/>
+      <ActiveWindowIndexAtStart Value="0"/>
+    </General>
+    <VersionInfo>
+      <StringTable ProductVersion=""/>
+    </VersionInfo>
+    <BuildModes Count="1">
+      <Item1 Name="default" Default="True"/>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+      <IgnoreBinaries Value="False"/>
+      <IncludeFileFilter Value="*.(pas|pp|inc|lfm|lpr|lrs|lpi|lpk|sh|xml)"/>
+      <ExcludeFileFilter Value="*.(bak|ppu|ppw|o|so);*~;backup"/>
+    </PublishOptions>
+    <RunParams>
+      <local>
+        <FormatVersion Value="1"/>
+        <LaunchingApplication PathPlusParams="/usr/X11R6/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
+      </local>
+    </RunParams>
+    <Units Count="1">
+      <Unit0>
+        <Filename Value="tttrmode.dpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="tttrmode"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="0"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="309"/>
+        <CursorPos X="10" Y="324"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit0>
+    </Units>
+    <JumpHistory Count="21" HistoryIndex="20">
+      <Position1>
+        <Filename Value="tttrmode.dpr"/>
+        <Caret Line="302" Column="1" TopLine="279"/>
+      </Position1>
+      <Position2>
+        <Filename Value="tttrmode.dpr"/>
+        <Caret Line="248" Column="34" TopLine="227"/>
+      </Position2>
+      <Position3>
+        <Filename Value="tttrmode.dpr"/>
+        <Caret Line="265" Column="35" TopLine="1"/>
+      </Position3>
+      <Position4>
+        <Filename Value="tttrmode.dpr"/>
+        <Caret Line="267" Column="45" TopLine="237"/>
+      </Position4>
+      <Position5>
+        <Filename Value="tttrmode.dpr"/>
+        <Caret Line="65" Column="10" TopLine="60"/>
+      </Position5>
+      <Position6>
+        <Filename Value="tttrmode.dpr"/>
+        <Caret Line="339" Column="15" TopLine="311"/>
+      </Position6>
+      <Position7>
+        <Filename Value="tttrmode.dpr"/>
+        <Caret Line="352" Column="21" TopLine="324"/>
+      </Position7>
+      <Position8>
+        <Filename Value="tttrmode.dpr"/>
+        <Caret Line="237" Column="13" TopLine="220"/>
+      </Position8>
+      <Position9>
+        <Filename Value="tttrmode.dpr"/>
+        <Caret Line="259" Column="43" TopLine="239"/>
+      </Position9>
+      <Position10>
+        <Filename Value="tttrmode.dpr"/>
+        <Caret Line="271" Column="46" TopLine="254"/>
+      </Position10>
+      <Position11>
+        <Filename Value="tttrmode.dpr"/>
+        <Caret Line="318" Column="13" TopLine="301"/>
+      </Position11>
+      <Position12>
+        <Filename Value="tttrmode.dpr"/>
+        <Caret Line="351" Column="39" TopLine="334"/>
+      </Position12>
+      <Position13>
+        <Filename Value="tttrmode.dpr"/>
+        <Caret Line="359" Column="36" TopLine="342"/>
+      </Position13>
+      <Position14>
+        <Filename Value="tttrmode.dpr"/>
+        <Caret Line="93" Column="12" TopLine="62"/>
+      </Position14>
+      <Position15>
+        <Filename Value="tttrmode.dpr"/>
+        <Caret Line="126" Column="21" TopLine="98"/>
+      </Position15>
+      <Position16>
+        <Filename Value="tttrmode.dpr"/>
+        <Caret Line="415" Column="27" TopLine="386"/>
+      </Position16>
+      <Position17>
+        <Filename Value="tttrmode.dpr"/>
+        <Caret Line="196" Column="24" TopLine="175"/>
+      </Position17>
+      <Position18>
+        <Filename Value="tttrmode.dpr"/>
+        <Caret Line="314" Column="45" TopLine="298"/>
+      </Position18>
+      <Position19>
+        <Filename Value="tttrmode.dpr"/>
+        <Caret Line="86" Column="21" TopLine="69"/>
+      </Position19>
+      <Position20>
+        <Filename Value="tttrmode.dpr"/>
+        <Caret Line="91" Column="14" TopLine="73"/>
+      </Position20>
+      <Position21>
+        <Filename Value="tttrmode.dpr"/>
+        <Caret Line="405" Column="19" TopLine="388"/>
+      </Position21>
+    </JumpHistory>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <Parsing>
+      <SyntaxOptions>
+        <UseAnsiStrings Value="False"/>
+      </SyntaxOptions>
+    </Parsing>
+    <Linking>
+      <Debugging>
+        <GenerateDebugInfo Value="False"/>
+        <UseLineInfoUnit Value="False"/>
+      </Debugging>
+    </Linking>
+    <Other>
+      <Verbosity>
+        <ShowHints Value="False"/>
+      </Verbosity>
+      <CompilerPath Value="$(CompPath)"/>
+    </Other>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="2">
+      <Item1>
+        <Name Value="ECodetoolError"/>
+      </Item1>
+      <Item2>
+        <Name Value="EFOpenError"/>
+      </Item2>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

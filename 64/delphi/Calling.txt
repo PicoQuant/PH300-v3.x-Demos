@@ -1,0 +1,74 @@
+PHLib is written in C++ and compiled with Microsoft Visual C++.
+
+Calling a C++ function from Delphi (Object Pascal), is straightforward,
+since both languages provide the same basic facilities.
+The following two lines declare the same function prototype:
+
+      C++:     extern "C" int _stdcall Func();
+
+      Pascal:  function Func: integer; stdcall;
+
+To call the function, you use the following syntax:
+
+      C++:     int x;
+               x = Func();
+
+      Pascal:  var
+                 x: Integer;
+               begin
+                 x := Func;
+               end;
+
+It is not necessary to include the library itself in the compilation linker
+list in Delphi, the DLL can be called straight from the code itself, and
+the compiler will link it automatically.
+
+The reference to the DLL is as a procedure or function, defined as external
+in the Delphi code. This procedure needs to have the same name as the DLL
+routine called.
+
+e.g.
+
+function PH_GetLibraryVersion(var LIB_Version:array of char):longint;
+         stdcall; external 'phlib.dll';
+
+
+The stdcall directive is required to ensure that the right calling convention is
+used, specifying rules for cleaning up the stack and passing variables.
+This calling convention is expected by PHLib.DLL. Make sure you match
+the calling convention correctly.
+
+The function or procedure can then be called as a normal routine, 
+
+e.g.
+
+ PH_GetLibraryVersion(LIB_Version);
+ writeln('PHLIB.DLL version is ',LIB_Version);
+
+Where parameters are passed to a function, types that are available in both
+languages must be used.  This is the case with the PicoHarp DLL and Delphi.
+The foillowing mappings apply:
+
+MSVC++(PHLIB)         Delphi         type description
+int                   longint        32 bit signed
+long int              longint        32 bit signed
+unsigned int          longword       32 bit unsigned
+unsigned long int     longword       32 bit unsigned
+float                 single         32 bit floating point
+char                  char           8 bit character
+
+The reference modifier in C++ formal parameter lists corresponds to the VAR
+keyword in an Object Pascal procedure declaration. Both indicate that the
+variable is to be passed by reference. For example:
+
+      C++:    int Func( int &x );
+
+      Pascal: function Func( var x: Integer ) : Integer;
+
+The C++ declarations of the DLL routines can ba found in PHLIB.H
+If you start from scratch, you should find a readily useable translation
+from C++ to Pascal in the provided DLLDEMO.DPR.
+Should you use updated versions of the DLL you should check this file against
+your Pascal implementation for possible changes.
+
+

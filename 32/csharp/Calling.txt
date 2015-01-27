@@ -1,0 +1,23 @@
+
+
+Calling a native DLL (unmanaged code) from C# requires the DllImport attribute 
+and correct type specification of the parameters. Not all types are easily 
+portable. Especially C strings require special handling. Here we used the C# 
+helper StringBuilder. Similar difficulties arise with structs, however, 
+THLib does not use structs in calling parameters. 
+
+The C# demos are portable between platforms, e.g. Windows and Linux, however, 
+this requires that you  stick to the subset of .NET that is supported by all 
+platforms. It also requires that you have the native DLL for the platform you 
+are targeting. 
+
+Currently we only support Windows and Linux on x86 (32 bits). Because of the
+native code dependencies, your main assembly will need to specify the same 
+bit-ness as the native DLL, which is 32 bits. Therfore, in your project 
+settings you need to select x86. The resulting programs will still run on 
+64 bit systems but only as 32 bit code.
+
+
+
+
+

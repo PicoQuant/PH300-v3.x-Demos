@@ -1,0 +1,5 @@
+In order to use PHLib with MATLAB You need to have a MATLAB version that supports 
+the 'calllib' function. 
+Be very careful about the header file name specified in 'loadlibrary'. This name 
+is case sensitive and a wrong spelling will lead to an apparently successful load 
+but later no library calls will work.
