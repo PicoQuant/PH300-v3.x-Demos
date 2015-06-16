@@ -1,4 +1,4 @@
-#PHLib Programming Library for PicoHarp 300 
+# Demo Code for PHLib Programming Library for PicoHarp 300 
 Version 3.0.0.1  
 PicoQuant GmbH - January 2014
 
