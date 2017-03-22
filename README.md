@@ -11,6 +11,8 @@ It requires a 686 class PC with USB 2.0 host controller,
 1 GB of memory and at least 1 GHz CPU clock. The PicoHarp software 
 is suitable for Windows XP, Vista, 7 and 8, including the x64 versions. 
 
+## Manual
+The Demo code relies on the PH300 DLL for which the manual is available here: http://www.picoquant.com/dl_manuals/PicoHarp300_V3_0_DLL_manual.pdf
 
 ## What's new in this version
 
