@@ -1,6 +1,6 @@
 /* Functions exported by the PicoHarp programming library PHLib */
 
-/* Ver. 3.0 December 2013 */
+/* Ver. 3.0.0.3 October 2015 */
 
 #ifndef _WIN32
 #define _stdcall

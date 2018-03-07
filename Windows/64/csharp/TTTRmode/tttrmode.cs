@@ -5,15 +5,14 @@
   The program performs a measurement based on hardcoded settings.
   The resulting data is stored in a binary output file.
 
-  Michael Wahl, PicoQuant GmbH, December 2013
+  Michael Wahl, PicoQuant GmbH, July 2015
 
   Note: This is a console application
 
   Tested with the following compilers:
 
-  - MS Visual C# 2010 (Win 32/64 bit)
-  - Mono 2.10.9 (Win 32/64 bit)
-
+  - MS Visual C# 2010 and 2013 (Win 32/64 bit)
+  - Mono 3.2.3 and 4.0.2 (Win 32/64 bit)
 
 ************************************************************************/
 
@@ -29,8 +28,6 @@ using System.Runtime.InteropServices;	//for DllImport
 class HistoMode 
 {
 
-	//the following constants are taken from hhlib.defin
-
 #if x64
 	const string PHLib = "phlib64"; 
 #else
@@ -38,6 +35,8 @@ class HistoMode
 #endif
 
 	const string TargetLibVersion ="3.0"; //this is what this program was written for
+
+	//the following constants are taken from phdefin.h
 
 	const int MAXDEVNUM = 8;
 	const int PH_ERROR_DEVICE_OPEN_FAIL = -1;
@@ -47,58 +46,58 @@ class HistoMode
 	const int FLAG_FIFOFULL = 0x0003;
 
 
-	[DllImport(PHLib)]
+	[DllImport(PHLib, CallingConvention = CallingConvention.StdCall)]
 	extern static int PH_GetLibraryVersion(StringBuilder vers);
 
-	[DllImport(PHLib)]
+	[DllImport(PHLib, CallingConvention = CallingConvention.StdCall)]
 	extern static int PH_GetErrorString(StringBuilder errstring, int errcode);
 
-	[DllImport(PHLib)]
+	[DllImport(PHLib, CallingConvention = CallingConvention.StdCall)]
 	extern static int PH_OpenDevice(int devidx, StringBuilder serial); 
 
-	[DllImport(PHLib)]
+	[DllImport(PHLib, CallingConvention = CallingConvention.StdCall)]
 	extern static int PH_Initialize(int devidx, int mode);
 
-	[DllImport(PHLib)]
+	[DllImport(PHLib, CallingConvention = CallingConvention.StdCall)]
 	extern static int PH_GetHardwareInfo(int devidx, StringBuilder model, StringBuilder partno, StringBuilder version); 
  
-	[DllImport(PHLib)]
+	[DllImport(PHLib, CallingConvention = CallingConvention.StdCall)]
 	extern static int PH_Calibrate(int devidx);
 
-	[DllImport(PHLib)]
+	[DllImport(PHLib, CallingConvention = CallingConvention.StdCall)]
 	extern static int PH_SetSyncDiv(int devidx, int div);
 
-	[DllImport(PHLib)]
+	[DllImport(PHLib, CallingConvention = CallingConvention.StdCall)]
 	extern static int PH_SetInputCFD(int devidx, int channel, int level, int zerocross);
 
-	[DllImport(PHLib)]
+	[DllImport(PHLib, CallingConvention = CallingConvention.StdCall)]
 	extern static int PH_SetBinning(int devidx, int binning);
 
-	[DllImport(PHLib)]
+	[DllImport(PHLib, CallingConvention = CallingConvention.StdCall)]
 	extern static int PH_SetOffset(int devidx, int offset);
 
-	[DllImport(PHLib)]
+	[DllImport(PHLib, CallingConvention = CallingConvention.StdCall)]
 	extern static int PH_GetResolution(int devidx, ref double resolution);  
 
-	[DllImport(PHLib)]
+	[DllImport(PHLib, CallingConvention = CallingConvention.StdCall)]
 	extern static int PH_GetCountRate(int devidx, int channel, ref int countrate);
 
-	[DllImport(PHLib)]
+	[DllImport(PHLib, CallingConvention = CallingConvention.StdCall)]
 	extern static int PH_StartMeas(int devidx, int tacq);
 
-	[DllImport(PHLib)]
+	[DllImport(PHLib, CallingConvention = CallingConvention.StdCall)]
 	extern static int PH_StopMeas(int devidx);
 
-	[DllImport(PHLib)]
+	[DllImport(PHLib, CallingConvention = CallingConvention.StdCall)]
 	extern static int PH_CTCStatus(int devidx, ref int ctcstatus);
 
-	[DllImport(PHLib)]
+	[DllImport(PHLib, CallingConvention = CallingConvention.StdCall)]
 	extern static int PH_ReadFiFo(int devidx, uint[] buffer, int count, ref int nactual);
 
-	[DllImport(PHLib)]
+	[DllImport(PHLib, CallingConvention = CallingConvention.StdCall)]
 	extern static int PH_GetFlags(int devidx, ref int flags);  
 	
-	[DllImport(PHLib)]
+	[DllImport(PHLib, CallingConvention = CallingConvention.StdCall)]
 	extern static int PH_CloseDevice(int devidx);
 
 
@@ -142,7 +141,7 @@ class HistoMode
 		FileStream  fs = null;
     		BinaryWriter bw = null;
 
-		Console.WriteLine ("PicoHarp 300     PHLib Demo Application     M. Wahl, PicoQuant GmbH, 2013");
+		Console.WriteLine ("PicoHarp 300     PHLib Demo Application     M. Wahl, PicoQuant GmbH, 2015");
 		Console.WriteLine ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 
 

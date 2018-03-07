@@ -1,6 +1,6 @@
 /* 
 	PHLib programming library for PicoHarp 300
-	PicoQuant GmbH, December 2013
+	PicoQuant GmbH, October 2015
 */
 
 
